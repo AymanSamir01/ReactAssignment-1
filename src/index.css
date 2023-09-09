@@ -1,3 +1,9 @@
+:root {
+  --main-text-color: #fff;
+  --bg-main-color : #2C3E50;
+  --active-color:#4da0fa;
+  --main-transition: 0.4s;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +17,126 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* start global rules */
+.bg-color {
+  background-color: var(--bg-main-color);
+}
+.notfound{
+  max-width: 100%;
+}
+/* end global rules */
+/* start navbar */
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+}
+.nav-link{
+  color: var(--main-text-color);
+  font-weight: bold;
+}
+nav li{
+  overflow: hidden;
+}
+.actives {
+  border-radius: 8px;
+  background-color: var(--active-color);
+}
+/* end navbar */
+section.content {
+  background-color: #E4F1FF;
+}
+.avatar{
+  width: 250px;
+  margin-bottom: -60px;
+}
+.main-head {
+  width: fit-content;
+  margin: auto;
+}
+.main-head i {
+  font-size: 20px;
+}
+.main-head::before,
+.main-head::after {
+content:  '';
+width: 90px;
+height: 4px;
+background-color: black;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+.main-head::before {
+  left: -100px;
+}
+.main-head::after {
+  right: -100px;
+}
+.layout-content {
+  min-height: calc(100vh - 30px);
+}
+/* start portfolio */
+.card-content{
+  cursor: pointer;
+}
+.card-content:hover .overlay{
+  opacity: 1;
+}
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(120 175 243 / 0.9);
+  opacity: 0;
+  transition: opacity var(--main-transition);
+}
+.popup{
+  z-index: 99999 !important;
+  display: none;
+}
+.popup img{
+  display: inline-block;
+  width: 60%;
+  height: 75%;
+}
+@media all and (max-width: 991px) {
+  .popup img{
+      width: 80%;
+      height: 90%;
+  }
+}
+/* end portfolio */
+/* start contacts */
+.form-control {
+  border: none;
+    border-bottom: 1px solid #ccc;
+}
+label {
+  position: relative;
+  top: 40px;
+  z-index: -1;
+  color: var(--active-color);
+  transition: top var(--main-transition);
+}
+/* end contacts */
+/* start footer */
+.footer-info .icon{
+  width: 40px;
+  height: 40px;
+  color: var(--main-text-color);
+  border: 1px solid var(--main-text-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  cursor: pointer;
+}
+.footer-bar {
+  background-color: #0c203fcf;
+}
+/* end footer */
